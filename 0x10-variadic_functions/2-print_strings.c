@@ -1,4 +1,5 @@
 #include "variadic_functions.h"
+
 /**
  * print_strings - prints strings.
  * @separator: string to be printed.
@@ -6,29 +7,28 @@
  *
  * Return: no return.
  */
-
-void modified_print_strings(const char *new_separator, const unsigned int new_n, ...)
+void print_strings(const char *separator, const unsigned int n, ...)
 {
-    va_list new_valist;
-    unsigned int new_i;
-    char *new_str;
+	va_list valist;
+	unsigned int i;
+	char *str;
 
-    va_start(new_valist, new_n);
+	va_start(valist, n);
 
-    for (new_i = 0; new_i < new_n; new_i++)
-    {
-        new_str = va_arg(new_valist, char *);
+	for (i = 0; i < n; i++)
+	{
+		str = va_arg(valist, char *);
 
-        if (new_str)
-            printf("%s", new_str);
-        else
-            printf("(nil)");
+		if (str)
+			printf("%s", str);
+		else
+			printf("(nil)");
 
-        if (new_i < new_n - 1)
-            if (new_separator)
-                printf("%s", new_separator);
-    }
+		if (i < n - 1)
+			if (separator)
+				printf("%s", separator);
+	}
 
-    printf("\n");
-    va_end(new_valist);
+	printf("\n");
+	va_end(valist);
 }

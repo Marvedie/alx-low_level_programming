@@ -1,9 +1,9 @@
 #include "variadic_functions.h"
 
 /**
- * print_numbers - prints the numbers.
+ * print_numbers - prints the  numbers.
  * @separator: string to be printed.
- * @n: number of integers passed to function.
+ * @n: number of integers passed to the function.
  *
  * Return: no return.
  */
